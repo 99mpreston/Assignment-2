@@ -3,6 +3,7 @@
  */
 public class AddingMachine {
     private int total = 0;
+    private String history = "0";
     
     /**
      * Class constructor, no arguments.
@@ -19,7 +20,7 @@ public class AddingMachine {
      * @return AddingMachine.total
      */
     public int getTotal() {
-        return 0;
+        return this.total;
     }
 
     /**
@@ -28,6 +29,9 @@ public class AddingMachine {
      * @param value the value to be added
      */
     public void add(int value) {
+        this.total += value;
+        this.history += " + " + value;
+        
         return;
     }
 
@@ -37,22 +41,28 @@ public class AddingMachine {
      * @param value the value to be subtracted
      */
     public void subtract(int value) {
+        this.total -= value;
+        this.history += " - " + value;
+        
         return;
     }
 
     /**
-     * Displays information regarding an AddingMachine.
+     * Displays the operation history of an AddingMachine.
      * 
-     * @return A string with the object's values
+     * @return A string containing all past operations
      */
     public String toString() {
-        return "";
+        return this.history;
     }
 
     /**
-     * Clears the total from an AddingMachine.
+     * Clears the total and history from an AddingMachine.
      */
     public void clear(){
+        this.total = 0;
+        this.history = "0";
+        
         return;
     }
 }
